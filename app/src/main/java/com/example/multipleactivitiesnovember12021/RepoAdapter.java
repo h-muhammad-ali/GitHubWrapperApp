@@ -38,7 +38,9 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoAdapter.Viewholder> {
         // to set data to textview and imageview of each card layout
         RepoModel model = repos.get(position);
         holder.repoName.setText(model.getName());
-        holder.repoURL.setText(model.getUrl());
+        holder.repoForks.setText(String.valueOf(model.getForks()));
+        holder.repoWatchers.setText(String.valueOf(model.getWatchers()));
+        holder.repoIssues.setText(String.valueOf(model.getIssues()));
         //holder.courseIV.setImageResource(model.getCourse_image());
     }
 
@@ -51,16 +53,23 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoAdapter.Viewholder> {
     // your views such as TextView and Imageview.
     public class Viewholder extends RecyclerView.ViewHolder {
         //private ImageView courseIV;
-        private TextView repoName;//, courseRatingTV;
-        private TextView repoURL;
+        private TextView repoName;
+        private TextView repoForks;
+        private TextView repoWatchers;
+        private TextView repoIssues;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             repoName = itemView.findViewById(R.id.repoName);
-            repoURL = itemView.findViewById(R.id.repoURL);
+            repoForks = itemView.findViewById(R.id.repoForks);
+            repoWatchers = itemView.findViewById(R.id.repoWatchers);
+            repoIssues = itemView.findViewById(R.id.repoIssues);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    openWebPage(repoURL.getText().toString());
+                    //openWebPage(repoURL.getText().toString());
+                    Intent myIntent = new Intent(view.getContext(), Insights.class);
+                    //myIntent.putExtra("key", value); //Optional parameters
+                    view.getContext().startActivity(myIntent);
                 }
             });
         }

@@ -45,7 +45,7 @@ public class GithubReposDataService {
                             try {
                                 JSONObject repo = response.getJSONObject(i);
 
-                                RepoModel repoModel = new RepoModel(repo.getString("name"), repo.getString("clone_url"));
+                                RepoModel repoModel = new RepoModel(repo.getString("name"), repo.getString("clone_url"), repo.getInt("forks"), repo.getInt("watchers"), repo.getInt("open_issues"));
                                 reposInfo.add(repoModel);
                             } catch (JSONException e) {
                                 Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
