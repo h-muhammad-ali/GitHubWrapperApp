@@ -19,7 +19,7 @@ import java.util.List;
 
 public class GithubReposDataService {
 
-    public static final String API_ENDPOINT_FOR_GITHUB_REPOS = "https://api.github.com/users/mali-ai/repos";
+    public static final String API_ENDPOINT_FOR_GITHUB_REPOS = "https://api.github.com/users/apple/repos";
     Context context;
 
     public GithubReposDataService(Context context) {
