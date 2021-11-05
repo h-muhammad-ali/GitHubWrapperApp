@@ -19,10 +19,12 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoAdapter.Viewholder> {
 
     private Context context;
     private List<RepoModel> repos;
+    private String username;
 
-    public RepoAdapter(Context context, List<RepoModel> repos) {
+    public RepoAdapter(Context context, List<RepoModel> repos, String username) {
         this.context = context;
         this.repos = repos;
+        this.username = username;
     }
 
     @NonNull
@@ -68,7 +70,8 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoAdapter.Viewholder> {
                 public void onClick(View view) {
                     //openWebPage(repoURL.getText().toString());
                     Intent myIntent = new Intent(view.getContext(), Insights.class);
-                    //myIntent.putExtra("key", value); //Optional parameters
+                    myIntent.putExtra("username", username);
+                    myIntent.putExtra("repoName", repoName.getText());
                     view.getContext().startActivity(myIntent);
                 }
             });

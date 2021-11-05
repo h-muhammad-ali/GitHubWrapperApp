@@ -19,11 +19,16 @@ import java.util.List;
 
 public class GithubReposDataService {
 
-    public static final String API_ENDPOINT_FOR_GITHUB_REPOS = "https://api.github.com/users/apple/repos";
+    String url = "https://api.github.com/users/";
     Context context;
 
     public GithubReposDataService(Context context) {
         this.context = context;
+    }
+
+    public GithubReposDataService(Context context, String username) {
+        this.context = context;
+        url = url + username +"/repos";
     }
 
     public interface VolleyResponseListener {
@@ -33,7 +38,7 @@ public class GithubReposDataService {
     }
 
     public void getMyRepos(VolleyResponseListener volleyResponseListener) {
-        String url = API_ENDPOINT_FOR_GITHUB_REPOS;
+        String url = this.url;
         List<RepoModel> reposInfo = new ArrayList<>();
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
