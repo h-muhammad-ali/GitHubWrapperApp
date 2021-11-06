@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Multiple Activities(November 1, 2021)</string>
     <string name="todo">TODO</string>
+    <string name="search_title">Search by Username here...</string>
 </resources>

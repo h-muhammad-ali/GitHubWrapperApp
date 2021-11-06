@@ -5,23 +5,17 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#7E7F7A"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_view1"
-        android:layout_width="415dp"
-        android:layout_height="569dp"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="#7E7F7A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="405dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
